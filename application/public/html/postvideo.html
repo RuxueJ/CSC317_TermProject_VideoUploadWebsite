@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postvideo</title>
+  </head>          
+  <body>
+    <header>
+        <h1>CSC 317 Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="postvideo.html">Postvieo</a></li>
+                <li><a href="viewpost.html">Viewpost</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Postvideo Form</h2>
+        <form>
+            <label for="post title">Post Title</label>
+            <input type="text" name="post title" id="post title" placeholder="Post Title"/>
+
+            <label for="post description">Post Description</label>
+            <input type="text" name="post description" id="post description" placeholder="Post Description"/>
+
+            <label for="video">Select a video:</label>
+            <input type="file" name="video" id="video" accept="video/*">
+
+            <label for="agreement">I accept Acceptable Use Policy for uploading videos. </label>
+            <nav>
+              <a href="#">Link of Acceptable Use Policy for uplaodign videos.</a>
+            </nav>
+            
+            <input type="checkbox" name = "agreement" id="agreement" value="agree">
+
+            <input type="submit" value="Upload">
+
+        </form>
+    </main>
+  
+    <foot>
+        Ruxue Jin &copy; 2023
+    </foot>
+  </body>
+</html>
