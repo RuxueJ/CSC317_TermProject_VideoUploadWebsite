@@ -1,8 +1,137 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root{
+  --site-bg: whitesmoke;
+  --text-rounded-corner: 0.35rem;
+  --footer-header-bg:#70004b;
+  --nav-color:rgb(130, 129, 129);
+  --link-color:rgb(47, 66, 241);
+  --form-margin:20px;
 }
 
-a {
-  color: #00B7FF;
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  /* margin: auto; */
+}
+
+html{
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: var(--site-bg);
+  margin:0px;
+}
+
+nav ul{
+  display: grid;
+  grid-auto-flow: column;
+  list-style: none;
+  /* width: 100%; */
+  margin: 0;
+  background-color: var(--nav-color);
+  font-size: 1rem;
+  padding: 12px;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  margin: auto;
+}
+
+h1{
+  color: #f1f1f1;
+  background-color: var(--footer-header-bg);
+  text-align:center;
+  font-size:2rem;
+  padding:20px;
+  margin: 0px;
+}
+
+h2{
+  color: rgb(50, 48, 48);
+  text-align:center;
+  font-size:1.6rem;
+  padding:20px;
+  margin: 10px;
+}
+
+form{
+  display: grid;
+  grid-auto-flow: rows;
+  gap:20px;
+  width:70%;
+  font-size: 1rem;
+  margin:auto;
+}
+
+.checkbox-group{
+  margin-left: 135px;
+ 
+}
+.input-group{
+  display: flex;
+  width:50%;
+  flex-direction:column;
+  margin-left: 135px;
+}
+.file-group{
+  margin-left: 135px;
+}
+
+
+.input-text{
+  width: 100%;
+  padding: 4px 8px;
+  border:1px solid #cacaca;
+  border-style: dashed;
+  border-radius: var(--text-rounded-corner);
+  box-shadow:1px 0px 5px 2px #d5c9c9;
+}
+
+.button-group{
+  margin: auto;
+  display: flex;
+}
+
+.form-button{
+  width: 80%;
+  color: black;
+  border: 1px solid black;
+  padding: 4px 10px;
+  margin: 5px 10px;
+}
+
+.reset-button{
+  background-color: #c24949;
+}
+
+.submit-button{
+  background-color: #09bd7b;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+
+
+
+
+.site-footer{
+  color: #f1f1f1;
+  background-color: var(--footer-header-bg);
+  text-align:center;
+  font-size:1rem;
+  padding:10px;
 }

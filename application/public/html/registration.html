@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>Registration</title>
   </head>          
   <body>
@@ -24,34 +25,46 @@
     <main>
         <h2>Registration Form</h2>
         <form action="registration.html">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="Username"/><br/>
 
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" placeholder="Email"/><br/>
+            <div class="input-group">
+              <label for="username">Username</label>
+              <input class="input-text" type="text" name="username" id="username" placeholder="Username"/>
+            </div>
 
-            <label for="password">Password</label>
-            <input type = "password" name = "password" id="password" placeholder="Password"/><br/>
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input class="input-text" type="text" name="email" id="email" placeholder="Email"/>
+            </div>
 
-            <label for="confirmpassword">Confirm Password</label>
-            <input type = "password" name = "confirm" id="confirmpassword" placeholder="Confirm Password"/><br/>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input class="input-text" type = "password" name = "password" id="password" placeholder="Password"/>
+            </div>
 
-            <label for="age">I confirm that I am 13 years of age of older:</label>
-            <input type="checkbox" name = "age" id="age" value="accepted"><br/>
+            <div class="input-group">
+              <label for="confirmpassword">Confirm Password</label>
+              <input class="input-text" type = "password" name = "confirm" id="confirmpassword" placeholder="Confirm Password"/>
+            </div>
 
-            <label for="TOS&Privacy">TOS and Privacy Rules</label>
-            <nav>
-              <a href="#">Link of TOS and Privacy rules.</a>
-            </nav>
-            
-            <input type="checkbox" name = "TOS&Privacy" id="TOS&Privacy" value="accepted"><br/>
+            <div class="checkbox-group">
+              <input type="checkbox" name = "age" id="age" value="accepted">
+              <label for="age">Are you 13+ years of age?</label>
+            </div>
 
+            <div class="checkbox-group">
+              <input type="checkbox" name = "TOS&Privacy" id="TOS&Privacy" value="accepted">
+              <label for="TOS&Privacy">Do you accept the <a href="#">Privacy Rules</a> and
+                <a href="#">Terms of service</a>?</label>
+            </div>
 
-            <input type="Submit" value="Submit">
+            <div class="button-group">
+              <input class="reset-button form-button" type="reset" value="Clear">
+              <input class="submit-button form-button" type="Submit" value="Submit">
+            </div>
         </form>
     </main>
   
-    <footer>
+    <footer class="site-footer">
       Ruxue Jin &copy; 2023
     </footer>
   </body>
