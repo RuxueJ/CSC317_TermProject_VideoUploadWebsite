@@ -2,7 +2,7 @@
   --site-bg: whitesmoke;
   --text-rounded-corner: 0.35rem;
   --footer-header-bg:#70004b;
-  --nav-color:rgb(130, 129, 129);
+  --navbar-color:rgb(130, 129, 129);
   --link-color:rgb(47, 66, 241);
   --form-margin:20px;
 }
@@ -16,7 +16,7 @@
 
 html{
   font-size: 16px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
@@ -28,17 +28,29 @@ nav ul{
   display: grid;
   grid-auto-flow: column;
   list-style: none;
-  /* width: 100%; */
   margin: 0;
-  background-color: var(--nav-color);
+  background-color: var(--navbar-color);
   font-size: 1rem;
   padding: 12px;
+  text-align: center;
 }
 
 ul li a {
-  color: white;
+  color: whitesmoke;
   text-decoration: none;
   margin: auto;
+}
+
+li a:hover{
+  color:#70004b;
+}
+
+form a{
+  color: var(--link-color);
+}
+
+form a:active{
+  color: #540dce;
 }
 
 h1{
@@ -62,23 +74,19 @@ form{
   display: grid;
   grid-auto-flow: rows;
   gap:20px;
-  width:70%;
+  width:30%;
   font-size: 1rem;
   margin:auto;
 }
 
-.checkbox-group{
+/* .checkbox-group{
   margin-left: 135px;
- 
-}
+  */
+
 .input-group{
   display: flex;
-  width:50%;
   flex-direction:column;
-  margin-left: 135px;
-}
-.file-group{
-  margin-left: 135px;
+
 }
 
 
@@ -89,6 +97,7 @@ form{
   border-style: dashed;
   border-radius: var(--text-rounded-corner);
   box-shadow:1px 0px 5px 2px #d5c9c9;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .button-group{
@@ -97,7 +106,7 @@ form{
 }
 
 .form-button{
-  width: 80%;
+  /* width: 80%; */
   color: black;
   border: 1px solid black;
   padding: 4px 10px;
@@ -105,11 +114,18 @@ form{
 }
 
 .reset-button{
-  background-color: #c24949;
+  background-color: #e85757;
+}
+.reset-button:hover{
+  background-color: #cc3333;
 }
 
 .submit-button{
   background-color: #09bd7b;
+}
+
+.submit-button:hover{
+  background-color: #1fa172;
 }
 
 textarea {
@@ -125,13 +141,27 @@ textarea {
 }
 
 
-
-
-
 .site-footer{
   color: #f1f1f1;
   background-color: var(--footer-header-bg);
   text-align:center;
   font-size:1rem;
   padding:10px;
+}
+
+.column{
+  float:left;
+  width: 33.33%;
+}
+
+.row:after{
+  content:"";
+  display: table;
+  clear:both;
+} 
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
