@@ -25,9 +25,7 @@ body {
   height:100%;
   width: 100%;
 }
-/* body * {
-  text-align: center;
-} */
+
 
 .container{
   display: flex;
@@ -49,8 +47,35 @@ body {
   background-color: var(--site-bg);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
+.video{
+  width: 80%;
+}
+.user-info{
+  display:flex;
+  flex-direction:column;
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+.comment-list{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 0;
+}
+.comment-view{
+  flex-grow: 1;
+  margin: 5px 5px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid rgb(81, 45, 45);
+}
 h2{
   color: rgb(50, 48, 48);
   text-align:center;
@@ -82,10 +107,8 @@ nav ul{
   text-align: center;
   justify-content: space-around;
 }
-/* ul li{
-  background-color: rgb(114, 114, 114) ;
 
-} */
+
 ul li a {
   color: whitesmoke;
   text-decoration: none;
@@ -187,11 +210,11 @@ textarea {
   clear:both;
 } 
 
-h3, video{
+p, h3, video{
   text-align: center;
 }
 
-section>ul{
+ul{
   list-style: none;
 }
 section>ul>li{
@@ -201,7 +224,9 @@ section>ul>li{
 .column {
   width: 100%;
 }
-
+.input-textarea{
+  overflow: scroll;
+}
 
 @media screen and (min-width: 500px) {
 nav ul {
@@ -213,12 +238,13 @@ nav ul {
 }
 .column {
   width: 33%;
+  float:left;
 }
 form{
- 
   width:50%;
-
 }
+.user-info{
+  flex-direction: row;
 }
 
 @media screen and (min-width: 850px) {
