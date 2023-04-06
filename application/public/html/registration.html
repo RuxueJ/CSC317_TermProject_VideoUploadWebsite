@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script defer src="../js/validation.js"></script>
   <title>Registration</title>
 </head>
 
@@ -26,44 +27,47 @@
       </nav>
     </header>
     <main class="main-content">
-      <h2>Registration Form</h2>
-      <form action="registration.html">
-
+      <form action="registration.html" id = "reg-form" autocomplete="off">
+        <h2>Registration Form</h2>
         <div class="input-group">
           <label for="username">Username</label>
           <input class="input-text" type="text" name="username" id="username" placeholder="Username" />
+          <div class="error"></div>
         </div>
 
         <div class="input-group">
           <label for="email">Email</label>
-          <input class="input-text" type="text" name="email" id="email" placeholder="Email" />
+          <input class="input-text" type="email" name="email" id="email" placeholder="Email" />
+          <div class="error"></div>
         </div>
 
         <div class="input-group">
           <label for="password">Password</label>
           <input class="input-text" type="password" name="password" id="password" placeholder="Password" />
+          <div class="error"></div>
         </div>
 
         <div class="input-group">
           <label for="confirmpassword">Confirm Password</label>
           <input class="input-text" type="password" name="confirm" id="confirmpassword"
             placeholder="Confirm Password" />
+          <div class="error"></div>
         </div>
 
         <div class="checkbox-group">
-          <input type="checkbox" name="age" id="age" value="accepted">
+          <input type="checkbox" name="age" id="age" value="accepted" required>
           <label for="age">Are you 13+ years of age?</label>
         </div>
 
         <div class="checkbox-group">
-          <input type="checkbox" name="TOS&Privacy" id="TOS&Privacy" value="accepted">
+          <input type="checkbox" name="TOS&Privacy" id="TOS&Privacy" value="accepted" required>
           <label for="TOS&Privacy">Do you accept the <a href="#">Privacy Rules</a> and
             <a href="#">Terms of service</a>?</label>
         </div>
 
         <div class="button-group">
-          <input class="reset-button form-button" type="reset" value="Clear">
-          <input class="submit-button form-button" type="Submit" value="Submit">
+          <input class="reset-button form-button" id="resetbuttom" type="reset" value="Clear">
+          <input class="submit-button form-button" id="submitbuttom" type="Submit" value="Submit">
         </div>
       </form>
     </main>
