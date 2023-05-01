@@ -1,5 +1,6 @@
 <main class="main-content">
-  <form action="registration.html" id="reg-form" autocomplete="off">
+  <form action="/users/register" 
+    method= "POST" enctype = "application/x-www-form-urlencoded" id="reg-form" autocomplete="off">
     <h2>Registration Form</h2>
     <div class="input-group">
       <label for="username">Username</label>
@@ -26,7 +27,7 @@
     </div>
 
     <div class="checkbox-group">
-      <input type="checkbox" name="age" id="age" value="accepted" required>
+      <input type="checkbox" name="ageCheck" id="age" value="accepted" required>
       <label for="age">Are you 13+ years of age?</label>
     </div>
 

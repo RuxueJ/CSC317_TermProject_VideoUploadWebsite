@@ -1,7 +1,7 @@
 <main class="main-content">
   <div class="login-form-container">
     <h2 class="login-form">Login Form</h2>
-    <form class="login-form form" action="login.html">
+    <form class="login-form form" action="/users/login" method="POST" enctype="application/x-www-form-urlencoded">
       <div class="input-group">
         <label for="username">Username</label>
         <input class="input-text" type="text" name="username" id="username" placeholder="Username" />
@@ -10,8 +10,11 @@
         <label for="password">Password</label>
         <input class="input-text" type="password" name="password" id="password" placeholder="Password" />
       </div>
+      <div>
+        <P>have no account? <a href="/register">register</a> now!</P>
+      </div>
       <div class="button-group">
-        <input class="form-button submit-button" type="submit" value="Submit">
+        <input class="form-button submit-button" name="submitButton" type="submit" value="Submit">
       </div>
     </form>
   </div>

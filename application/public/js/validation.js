@@ -149,7 +149,7 @@ form.addEventListener("submit", function(ev){
         document.getElementById("submitbuttom").disabled = false;
         ev.currentTarget.submit();
         // console.log("form data is good");
-        window.alert("form is submitted. WIll refresh this page");
+        // window.alert("form is submitted. WIll refresh this page");
     }
     console.log(ev);
 })
