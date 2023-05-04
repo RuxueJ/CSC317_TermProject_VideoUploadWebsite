@@ -1,13 +1,27 @@
 <header class="page-header">
     <h1>CSC 317 Website</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Registration</a></li>
-            <li><a href="/postvideo">Postvieo</a></li>
-            <li><a href="/viewpost">Viewpost</a></li>
-            <li><a href="/profile">Profile</a></li>
+    <nav class="navBar">
+        <ul >
+            <li class="navBarElement"><a href="/">Home</a></li>
+
+            <li class="navBarElement"><a href="/viewpost">Viewpost</a></li>
+
+
+            {{#if isLoggedIn}}
+
+            <li class="navBarElement"><a href="/postvideo">Postvieo</a></li>
+            {{> userdropdown}}
+            {{else}}
+            <li class="navBarElement"><a href="/login">Login</a></li>
+            {{/if}}
+            <form class="search-bar" action="/search">
+                <input type="text" placeholder="Search" name="q">
+                <button type="submit">Search</button>
+            </form>
+            {{!-- <li><a href="/register">Registration</a></li> --}}
+
+            {{!-- {{log this}} --}}
+            {{!-- <li class="navBarElement"><a href="/profile">Profile</a></li> --}}
         </ul>
     </nav>
 </header>
