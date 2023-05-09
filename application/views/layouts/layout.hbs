@@ -11,16 +11,16 @@
   <script defer src="/public/js/fetchAPI.js"></script>
   <script defer src="/public/js/validation.js"></script> --}}
   {{#each js}}
-    <script defer src="/public/js/{{this}}"></script>
+  <script defer src="/public/js/{{this}}"></script>
   {{/each }}
 
 </head>
 
 <body>
   <div class="container">
-    {{#if (nonEmptyObject messages)}}
-      {{> flashmessage this}}
-    {{/if}}
+    {{!-- {{#if (nonEmptyObject messages)}}
+    {{> flashmessage this}}
+    {{/if}} --}}
     {{> header}}
     {{{body}}}
     {{> lrside}}

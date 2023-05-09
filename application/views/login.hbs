@@ -1,5 +1,8 @@
 <main class="main-content">
   <div class="login-form-container">
+    {{#if (nonEmptyObject messages)}}
+    {{> flashmessage this}}
+    {{/if}}
     <h2 class="login-form">Login Form</h2>
     <form class="login-form form" action="/users/login" method="POST" enctype="application/x-www-form-urlencoded">
       <div class="input-group">

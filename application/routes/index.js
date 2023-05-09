@@ -18,9 +18,7 @@ router.get('/register',function(req,res){
   res.render('register',{title:"Registration",js:["validation.js"]});
 })
 
-router.get('/profile',function(req,res){
-  res.render('profile',{title:"Profile"});
-})
+
 router.get('/postvideo',function(req,res){
   res.render('postvideo',{title:"PostVideo"});
 })

@@ -1,14 +1,10 @@
 <header class="page-header">
     <h1>CSC 317 Website</h1>
     <nav class="navBar">
-        <ul >
+        <ul>
             <li class="navBarElement"><a href="/">Home</a></li>
-
             <li class="navBarElement"><a href="/viewpost">Viewpost</a></li>
-
-
             {{#if isLoggedIn}}
-
             <li class="navBarElement"><a href="/postvideo">Postvieo</a></li>
             {{> userdropdown}}
             {{else}}

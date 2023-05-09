@@ -53,7 +53,6 @@ router.post('/login', async function (req, res, next) {
       req.session.save(function(err){
         return res.redirect('/login');
     })
-    
     } else {
       var passwordsMatch = await bcrypt.compare(password, user.password);
       if (passwordsMatch) {
@@ -82,9 +81,7 @@ router.post("/logout", function (req, res, next) {
       next(err);
     }
     return res.redirect('/');
-
   })
-
 })
 module.exports = router;
 
