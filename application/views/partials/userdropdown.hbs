@@ -1,8 +1,8 @@
 <div class = "dropdown-menu-nobs">
-    <button class = "button-dropdown nav-itmes">Hi,{{user.username}}</button>
+    <button class = "button-dropdown nav-items">Hi,{{user.username}}</button>
     <div class="dropdown-menu-items">
-        <a class = "nav-items" href = "/users/profile">Profile</a>
-        <form action="/users/logout" method="Post">
+        <a class = "nav-items" href = "/users/profile/{{user.userID}}">Profile</a>
+        <form class="log-out-button" action="/users/logout" method="Post">
             <button class="nav-items" type="submit">Log out</button>
         </form>
     </div>

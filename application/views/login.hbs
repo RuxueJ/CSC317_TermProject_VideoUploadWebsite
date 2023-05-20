@@ -1,10 +1,11 @@
 <main class="main-content">
-  <div class="login-form-container">
-    {{#if (nonEmptyObject messages)}}
-    {{> flashmessage this}}
-    {{/if}}
-    <h2 class="login-form">Login Form</h2>
-    <form class="login-form form" action="/users/login" method="POST" enctype="application/x-www-form-urlencoded">
+  <fieldset class="login-form-container">
+    {{!-- <legend>Log In Information</legend> --}}
+    <form class="login-form form" action="/users/login" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="off">
+      <h2 class="login-form-title">Login Form</h2>
+      {{#if (nonEmptyObject messages)}}
+      {{> flashmessage this}}
+      {{/if}}
       <div class="input-group">
         <label for="username">Username</label>
         <input class="input-text" type="text" name="username" id="username" placeholder="Username" />
@@ -20,5 +21,5 @@
         <input class="form-button submit-button" name="submitButton" type="submit" value="Submit">
       </div>
     </form>
-  </div>
+  </fieldset>
 </main>

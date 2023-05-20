@@ -2,20 +2,26 @@
     <h1>CSC 317 Website</h1>
     <nav class="navBar">
         <ul>
+
             <li class="navBarElement"><a href="/">Home</a></li>
-            <li class="navBarElement"><a href="/viewpost">Viewpost</a></li>
-            {{#if isLoggedIn}}
+
+
             <li class="navBarElement"><a href="/postvideo">Postvieo</a></li>
+
+            {{#if isLoggedIn}}
             {{> userdropdown}}
             {{else}}
             <li class="navBarElement"><a href="/login">Login</a></li>
             {{/if}}
-            <form class="search-bar" action="/search">
-                <input type="text" placeholder="Search" name="q">
-                <button type="submit">Search</button>
-            </form>
+            {{!-- <li class="search-bar navBarElement"> --}}
+                <form class="search-bar" action="/posts/search" method="GET"
+                    enctype="application/x-www-form-urlencoded">
+                    <input class="search-text" type="text" id="search-text" name="searchValue">
+                    <button id="search-button" type="submit">Search</button>
+                </form>
+            {{!-- </li> --}}
+            {{!-- {{log this}} --}}
             {{!-- <li><a href="/register">Registration</a></li> --}}
-
             {{!-- {{log this}} --}}
             {{!-- <li class="navBarElement"><a href="/profile">Profile</a></li> --}}
         </ul>

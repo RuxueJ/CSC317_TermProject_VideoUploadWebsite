@@ -1,12 +1,39 @@
-<main class="main-content">
-  <h2>profile</h2>
-  <div class="user-info">
-    <h5>{{user.username}}</h5>
-    <h5>{{user.email}}</h5>
+<main class="profile-main-content">
+  <div class="profile-information">
+    <h2>profile</h2>
+    <div class="user-info">
+      <h5>username: {{user.username}}</h5>
+      <h5>email: {{user.email}}</h5>
+    </div>
+    {{!-- <h2>{{rows}}</h2> --}}
   </div>
-  <ul class="comment-list">
-    <li class="comment-view">This is the first post.</li>
-    <li class="comment-view">This is the second post.</li>
-    <li class="comment-view">This is the third post.</li>
-  </ul>
+  <div class="profile-video-container">
+    {{#each videos}}
+    <div class="video-Tag">
+      <div class="video">
+        <img class="video-element" src="../../{{this.thumbnail}}" alt="alternative-text" width="200px" height="200px">
+      </div>
+      <div class="video-info">
+        <div class="video-title video-element">
+          <p>post title: {{this.title}}</p>
+        </div>
+        <div class="video-time video-element">
+          <p>created at {{formatDateString this.createAt}}</p>
+        </div>
+        <a class="video-link video-element" href="/posts/{{this.id}}">video link</a>
+        <div class="video-button">
+          <div class="video-edit-button">
+            <button>Edit</button>
+          </div>
+          <form class="video-delete-button"  action="/posts/delete/{{this.id}}" method="GET">
+            <div class="video-delete-button" data-id="{{this.id}}">
+              <button type="submit" >Delete</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    {{/each}}
+   
 </main>

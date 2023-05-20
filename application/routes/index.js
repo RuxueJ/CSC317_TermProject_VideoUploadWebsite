@@ -1,9 +1,11 @@
 var express = require('express');
+const {isLoggedIn} = require('../middleware/auth');
+const { getRecentPosts } = require('../middleware/posts');
 var router = express.Router();
 
 /* GET home page. */
 // localhost:3000
-router.get('/', function(req, res,next) {
+router.get('/', getRecentPosts, function(req, res,next) {
   res.render('index', { title: 'CSC 317 App', name:"Ruxue Jin",js:["fetchAPI.js"] });
 });
 
@@ -19,13 +21,13 @@ router.get('/register',function(req,res){
 })
 
 
-router.get('/postvideo',function(req,res){
+router.get('/postvideo',isLoggedIn,function(req,res){
   res.render('postvideo',{title:"PostVideo"});
 })
+
+
 // router.get('/viewpost',function(req,res){
 //   res.render('viewpost',{title:"ViewPost"});
 // })
-router.get('/viewpost/:id(\\d+)',function(req,res){
-  res.render('viewpost',{title:`ViewPost ${req.params.id}`,css:["style.css"]});
-});
+
 module.exports = router;

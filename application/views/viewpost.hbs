@@ -1,18 +1,88 @@
 <main class="main-content">
-    <h3>Duck In The Swimming Pool</h3>
-    <h5>Ruxue Jin</h3>
-        <h5>3/10/2012</h3>
-            <div class="video-container">
-                <video class="video" src="/public/duck.mp4" controls autoplay loop muted>
-                    Your browser does not support the video tag.
-                </video>
+    <div class="post-container">
+        {{#if (nonEmptyObject messages)}}
+        {{> flashmessage this}}
+        {{/if}}
+        <div class="video-container">
+            <video class="video" src="/{{post.video}}" width="400px" height="auto" controls autoplay loop muted>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="post-info">
+            <strong class="post-title">{{post.title}}</strong></br>
+            <span class="author">{{post.username}}</span>
+            <span class="date-posted">{{ formatDateString post.createAt}}</span></br>
+            {{!-- <div class="post-author-date">
+                <p class="author">{{post.username}}</p>
+                <p class="date-posted">{{ formatDateString post.createAt}}</p>
+            </div> --}}
+            <span class="post-description">
+                {{post.description}}
+            </span>
+        </div>
+
+        <div class="comment-section">
+            <div class="comment-box">
+                <textarea id="comment-text" class="comment-box-text"></textarea>
+                <button id="comment-button" class="comment-box-button" data-postid="{{post.id}}">submit</button>
             </div>
 
-            <ul class="comment-list">
-                <li class="comment-view">This is the first comment...</li>
-                <li class="comment-view">This is the second comment...</li>
-                <li class="comment-view">This is the third comment...</li>
-                <li class="comment-view">This is the fourth comment...</li>
-                <li class="comment-view">This is the fifth comment...</li>
-            </ul>
+        </div>
+        <div id="comment-container" class="comment-container">
+            {{#each post.comments}}
+            <div class="comment">
+                {{!-- <h1 class="comment-text"> {{this}}</h1> --}}
+                <strong class="comment-author">{{this.username}}</strong>
+                <span class="comment-date">{{ formatDateString this.createdAt}}</span>
+                {{!-- <div class="comment-text">{{this.id}}</div> --}}
+                <div class="comment-text">{{this.comment}}</div>
+            </div>
+            {{/each}}
+        </div>
+
+        <script>
+            document.getElementById("comment-button").addEventListener('click', function (ev) {
+                let commentText = document.getElementById("comment-text").value;
+                if (!commentText) return;
+                var postId = ev.currentTarget.dataset.postid;
+
+                fetch("/comments/create", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        postId: postId,
+                        comment: commentText
+                    })
+
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        var comments = document.getElementById('comment-container');
+                        let commentFragment = document.createElement('template');
+                        commentFragment.innerHTML =
+                            `<div class="comment">
+                            <strong class="comment-author">${data.username}</strong>
+                            <span class="comment-date">${(new Date()).toLocaleString(
+                                "en-us", {
+                                dateStyle: "long",
+                                timeStyle: "medium"
+                            })}</span>
+            <div class="comment-text">${data.commentText}</div>
+        </div>`;
+                        comments.append(commentFragment.content.firstChild);
+
+                    })
+
+                window.location.reload();
+
+            }
+            )
+
+
+        </script>
+
+    </div>
 </main>

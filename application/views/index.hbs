@@ -1,9 +1,11 @@
 <main class="main-content" id="main-content">
-  <h2 id="number-tag"></h2>
-  <div class="picture-container" id="picture-container">
-    <!-- <div class = "card">
-          <img class = "card-image" src="" >
-          <p class = "card-title"></p>
-        </div> -->
+  {{#if (nonEmptyObject messages)}}
+  {{> flashmessage this}}
+  {{/if}}
+  <div class="post-pool">
+    {{#each posts}}
+    {{>card this}}
+    {{/each}}
   </div>
+
 </main>
