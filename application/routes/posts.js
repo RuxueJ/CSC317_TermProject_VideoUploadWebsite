@@ -57,7 +57,9 @@ router.get('/:id(\\d+)', getPostById, getCommentsForPostById, function (req, res
 
 router.get('/delete/:id(\\d+)', isLoggedIn, async function (req, res, next) {
     // var result = confirm('Do you want to delete?');
+
     // if (!result) return;
+    var userID = req.session.user.userID;
 
     var itemId = req.params.id;
     try {
@@ -74,7 +76,7 @@ router.get('/delete/:id(\\d+)', isLoggedIn, async function (req, res, next) {
             // window.location.reload();
             return req.session.save(function (error) {
                 if (error) next(error);
-                return res.redirect(`/`);
+                return res.redirect(`/users/profile/${userID}`);
             })
 
         } else {
@@ -108,8 +110,5 @@ router.get("/search", async function (req, res, next) {
     }
 });
 
-// router.delete("/delete", function (req, res, next) {
-
-// });
 
 module.exports = router;
