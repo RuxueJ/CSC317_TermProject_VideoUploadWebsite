@@ -24,10 +24,15 @@ router.post(
     isLoggedIn,
     upload.single("uploadVideo"),
     makeThumbnail,
+
     async function (req, res, next) {
+      
+
         var { title, description } = req.body;
         var { path, thumbnail } = req.file;
         var { userID } = req.session.user;
+
+       
         try {
             var [insertResult, _] = await db.execute(
                 `INSERT INTO posts (title, description, video, thumbnail,fk_userID)
@@ -44,11 +49,12 @@ router.post(
             } else {
                 next(new Error('Post could not be created'));
             }
-            window.location.reload();
 
         } catch (error) {
             next(error);
         }
+
+
     });
 
 router.get('/:id(\\d+)', getPostById, getCommentsForPostById, function (req, res) {

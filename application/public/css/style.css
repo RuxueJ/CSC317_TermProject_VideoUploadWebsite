@@ -183,10 +183,16 @@ h2 {
   display: grid;
   padding: 18px;
   gap: 20px;
-  grid-auto-rows: 300px;
+  grid-auto-rows: 250px;
   grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
+.image-tag{
+display: grid;
+grid-template-rows: 4fr 1fr;
+}
+
 .log-out-button{
   width: fit-content;
 }
