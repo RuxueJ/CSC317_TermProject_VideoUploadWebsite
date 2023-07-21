@@ -19,9 +19,13 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. npm install express-session bcrypt express-flash express-mysql-session
+
+2. localhost:3000
+
 
 ## Run Instructions
-1. steps here
-2. steps here 
+npm start
+After user post a video, if the thumbnail image fails to display in the 
+screen, user can refresh the page, then the thumbnail will show up. 
+
