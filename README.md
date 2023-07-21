@@ -30,7 +30,4 @@ npm start
 After user post a video, if the thumbnail image fails to display in the 
 screen, user can refresh the page, then the thumbnail will show up. 
 
-=======
-# VideoUploadWebsite
-a YouTube-Like video upload website, clients can create account, upload videos, view videos on this website. 
->>>>>>> 18094fa5689ab722baa9260b9180ac9379372ab4
+
