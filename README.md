@@ -7,14 +7,6 @@ The purpose of this repository is to store all the code for your web application
 
 Please follow the instructions below and fill in the information requested when prompted.
 
-## Student Information
-
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | Ruxue Jin     |
-| Student ID    | 923092817     |
-| Student Email |rjin@sfsu.edu  |
-
 
 
 # Build/Run Instructions
